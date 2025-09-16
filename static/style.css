@@ -1,0 +1,108 @@
+body {
+    background: linear-gradient(to bottom right, #e0f2fe, #bfdbfe);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 360px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.doctor-icon {
+    width: 50px;
+    height: 50px;
+}
+
+h2 {
+    color: #1e3a8a;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    background: #f0f9ff;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+label {
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1e3a8a;
+}
+
+input, select {
+    flex: 2;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #172554;
+}
+
+.result {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #111;
+    font-weight: bold;
+}
+
+.cm-table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: center;
+}
+
+.cm-table td {
+    border: 2px solid #1e3a8a;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #f0f9ff;
+    color: #1e3a8a;
+    font-weight: bold;
+}

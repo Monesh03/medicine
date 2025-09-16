@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Overdose Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Medicine Overdose Prediction</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" class="doctor-icon" alt="Doctor">
+        </div>
+
+        <form action="/predict" method="POST">
+
+            <!-- Medicine 1 -->
+            <div class="input-group">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlMtOV7r9OXQc4BviLV5LB785uEhH8SW_KUXoHjUZiDdWl_8R96Pqt6Fbjah0kNwHoQFQ&usqp=CAU" class="icon" alt="Tablet">
+                <label>Medicine 1:</label>
+                <select name="medicine1" required>
+                    <option value="Aspirin" {% if med1=="Aspirin" %}selected{% endif %}>Aspirin</option>
+                    <option value="Paracetamol" {% if med1=="Paracetamol" %}selected{% endif %}>Paracetamol</option>
+                    <option value="Ibuprofen" {% if med1=="Ibuprofen" %}selected{% endif %}>Ibuprofen</option>
+                    <option value="Amoxicillin" {% if med1=="Amoxicillin" %}selected{% endif %}>Amoxicillin</option>
+                    <option value="Ciprofloxacin" {% if med1=="Ciprofloxacin" %}selected{% endif %}>Ciprofloxacin</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920344.png" class="icon" alt="Dose">
+                <label>Dose 1 (mg):</label>
+                <input type="number" name="dose1" value="{{ dose1 }}" required>
+            </div>
+
+            <!-- Medicine 2 -->
+            <div class="input-group">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlMtOV7r9OXQc4BviLV5LB785uEhH8SW_KUXoHjUZiDdWl_8R96Pqt6Fbjah0kNwHoQFQ&usqp=CAU" class="icon" alt="Tablet">
+                <label>Medicine 2:</label>
+                <select name="medicine2" required>
+                    <option value="Aspirin" {% if med2=="Aspirin" %}selected{% endif %}>Aspirin</option>
+                    <option value="Paracetamol" {% if med2=="Paracetamol" %}selected{% endif %}>Paracetamol</option>
+                    <option value="Ibuprofen" {% if med2=="Ibuprofen" %}selected{% endif %}>Ibuprofen</option>
+                    <option value="Amoxicillin" {% if med2=="Amoxicillin" %}selected{% endif %}>Amoxicillin</option>
+                    <option value="Ciprofloxacin" {% if med2=="Ciprofloxacin" %}selected{% endif %}>Ciprofloxacin</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920344.png" class="icon" alt="Dose">
+                <label>Dose 2 (mg):</label>
+                <input type="number" name="dose2" value="{{ dose2 }}" required>
+            </div>
+
+            <!-- Medicine 3 -->
+            <div class="input-group">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlMtOV7r9OXQc4BviLV5LB785uEhH8SW_KUXoHjUZiDdWl_8R96Pqt6Fbjah0kNwHoQFQ&usqp=CAU" class="icon" alt="Tablet">
+                <label>Medicine 3:</label>
+                <select name="medicine3" required>
+                    <option value="Aspirin" {% if med3=="Aspirin" %}selected{% endif %}>Aspirin</option>
+                    <option value="Paracetamol" {% if med3=="Paracetamol" %}selected{% endif %}>Paracetamol</option>
+                    <option value="Ibuprofen" {% if med3=="Ibuprofen" %}selected{% endif %}>Ibuprofen</option>
+                    <option value="Amoxicillin" {% if med3=="Amoxicillin" %}selected{% endif %}>Amoxicillin</option>
+                    <option value="Ciprofloxacin" {% if med3=="Ciprofloxacin" %}selected{% endif %}>Ciprofloxacin</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920344.png" class="icon" alt="Dose">
+                <label>Dose 3 (mg):</label>
+                <input type="number" name="dose3" value="{{ dose3 }}" required>
+            </div>
+
+            <!-- Age -->
+            <div class="input-group">
+                <img src="https://cdn-icons-png.flaticon.com/512/3011/3011270.png" class="icon" alt="Age">
+                <label>Age:</label>
+                <select name="age" required>
+                    <option value="0-5" {% if age_range=="0-5" %}selected{% endif %}>0-5</option>
+                    <option value="6-10" {% if age_range=="6-10" %}selected{% endif %}>6-10</option>
+                    <option value="11-20" {% if age_range=="11-20" %}selected{% endif %}>11-20</option>
+                    <option value="21-30" {% if age_range=="21-30" %}selected{% endif %}>21-30</option>
+                    <option value="31-40" {% if age_range=="31-40" %}selected{% endif %}>31-40</option>
+                    <option value="41-50" {% if age_range=="41-50" %}selected{% endif %}>41-50</option>
+                    <option value="51-60" {% if age_range=="51-60" %}selected{% endif %}>51-60</option>
+                    <option value="61-70" {% if age_range=="61-70" %}selected{% endif %}>61-70</option>
+                    <option value="71-80" {% if age_range=="71-80" %}selected{% endif %}>71-80</option>
+                    <option value="81-90" {% if age_range=="81-90" %}selected{% endif %}>81-90</option>
+                </select>
+            </div>
+
+            <!-- Symptoms -->
+            <div class="input-group">
+                <img src="https://cdn-icons-png.flaticon.com/512/2784/2784463.png" class="icon" alt="Symptoms">
+                <label>Overdose Symptoms:</label>
+                <select name="symptoms" required>
+                    <option value="None" {% if symptoms=="None" %}selected{% endif %}>None</option>
+                    <option value="Nausea" {% if symptoms=="Nausea" %}selected{% endif %}>Nausea</option>
+                    <option value="Vomiting" {% if symptoms=="Vomiting" %}selected{% endif %}>Vomiting</option>
+                    <option value="Dizziness" {% if symptoms=="Dizziness" %}selected{% endif %}>Dizziness</option>
+                    <option value="Seizures" {% if symptoms=="Seizures" %}selected{% endif %}>Seizures</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <h3 class="result">Prediction: {{ prediction }}</h3>
+        {% endif %}
+
+        {% if acc %}
+        <div class="result">
+            <p>Model Accuracy: {{ acc }}%</p>
+            <p>Confusion Matrix:</p>
+            <table class="cm-table">
+                {% for row in cm %}
+                    <tr>
+                        {% for val in row %}
+                            <td>{{ val }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
