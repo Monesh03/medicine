@@ -1,6 +1,6 @@
-# Ensure modern build tools
+# Modern build tools (avoid setuptools/pkgutil errors)
 pip>=24.2
-setuptools>=75.0
+setuptools>=75.1.0
 wheel>=0.44
 
 absl-py==2.1.0
